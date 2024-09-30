@@ -7,7 +7,7 @@ public class ReadBooks {
         this.bookHashMap = new HashMap<Book, Boolean>();
     }
 
-    public HashMap<Book, Boolean> getReadBooks() {
+    public HashMap<Book, Boolean> getBooks() {
         return bookHashMap;
     }
 
@@ -20,5 +20,9 @@ public class ReadBooks {
 
     public void readBook(Book currBook) {
         bookHashMap.put(currBook, true);
+    }
+
+    public boolean isRead(Book currBook) {
+        return bookHashMap.get(currBook);
     }
 }
