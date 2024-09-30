@@ -71,11 +71,17 @@ public class Librarian {
     }
 
     /**
-     * @param bookToUpdate = a book to change rating of.
+     * @param title = title of book to set to read.
+     * @param author = author of book to set to read.
      * @param newRating = the rating that is wanted to be set.
+     * @pre newRating int >= 1 and <= 5
      */
-    public void rate(Book bookToUpdate, int newRating) {
-        ratings.putRating(bookToUpdate, newRating);
+    public void rate(String title, String author, int newRating) {
+        Book bookToUpdate = findBook(title, author);
+        if(bookToUpdate != null){
+            ratings.putRating(bookToUpdate, newRating);
+        }
+        
     }
 
     /**
