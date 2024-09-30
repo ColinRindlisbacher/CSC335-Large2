@@ -1,6 +1,11 @@
 public class Librarian {
     
+    RatedBooks ratings;
+    ReadBooks readStatus;
+
     public Librarian() {
+        this.ratings = new RatedBooks();
+        this.readStatus = new ReadBooks();
     }
 
     public String search(String method) {
@@ -13,16 +18,17 @@ public class Librarian {
         // }
         return "temp";
     }
-    public void addBook(Book newBook) {
 
+    public void addBook(Book newBook) {
+        readStatus.addNewBook(newBook);
     }
 
     public void setToRead(Book bookToUpdate) {
 
     }
 
-    public void rate(Book bookToUpdate) {
-
+    public void rate(Book bookToUpdate, int newRating) {
+        ratings.putRating(bookToUpdate, newRating);
     }
 
     public void getBooks(String method) {
