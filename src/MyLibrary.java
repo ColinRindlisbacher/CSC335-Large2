@@ -23,9 +23,10 @@ public class MyLibrary {
 			System.out.println("7- Add books file");
 			System.out.println("Type 'q' or 'Q' to exit");
 
-			input = s.next();
+			input = s.nextLine();
 
 			switch(input){
+				// book search selected
 				case "1":
 					String method = "";
 					boolean isValidMethod = false;
@@ -49,17 +50,46 @@ public class MyLibrary {
 					System.out.println("Searching for book by "+ method + "...");
 					lib.search(method, search);
 					break;
+
+				// add book selected
 				case "2":
+					// get info about new book
+					System.out.println("Please enter title of book to be added:");
+					String title = s.nextLine();
+					System.out.println("Please enter author of book to be added:");
+					String author = s.nextLine();
 					System.out.println("Adding book to library...");
+					// create new book
+					Book newBook = new Book(title, author);
+					lib.addBook(newBook);
 					break;
+
+				// setToRead selected
 				case "3":
+					System.out.println("Enter title of book that you read:");
+					title = s.nextLine();
+					System.out.println("Enter the author of book that you read:");
+					author = s.nextLine();
+					// can add status message here if we want
+					lib.setToRead(title, author);
 					break;
+
+				// rate selected
 				case "4":
+					System.out.println("Enter title for book you want to rate:");
+					title = s.nextLine();
+					System.out.println("Enter author for book you want to rate:");
+					author = s.nextLine();
+					boolean isValidRate = false;
+					// loop to get valid rating(1-5)
 					break;
+
 				case "5":
 					break;
+
 				case "6":
 					break;
+					
 				case "7":
 					break;
 			}
