@@ -1,3 +1,10 @@
+/*
+ * Authors: AJ Cronin and Colin Rindlisbacher
+ * File: ReadBooks.java
+ * Purpose: Holds information about books and their read status.
+ * The read status can only be updated to read, not un-read.
+ */
+
 import java.util.HashMap;
 
 public class ReadBooks {

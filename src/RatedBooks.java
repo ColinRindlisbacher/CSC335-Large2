@@ -1,3 +1,10 @@
+/*
+ * Authors: AJ Cronin and Colin Rindlisbacher
+ * File: RatedBooks.java
+ * Purpose: Holds information about books and their ratings.
+ * These ratings can be updated.
+ */
+
 import java.util.HashMap;
 
 public class RatedBooks {

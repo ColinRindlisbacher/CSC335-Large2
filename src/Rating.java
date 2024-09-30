@@ -1,3 +1,9 @@
+/*
+ * Authors: AJ Cronin and Colin Rindlisbacher
+ * File: Rating.java
+ * Purpose: Holds information on the rating of a book.
+ */
+
 public class Rating {
     private int rating;
     
