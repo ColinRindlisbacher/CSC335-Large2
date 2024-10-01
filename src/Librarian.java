@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Librarian {
@@ -27,14 +28,42 @@ public class Librarian {
      * @pre method.equals("title") || method.equals("author") || method.equals("rating")
      */
     public String search(String method, String search) {
-        // if (method.equals("title")) {
-        //     return searchByTitle;
-        // } else if (method.equals("author"){
-        //     return searchByAuthor;
-        // } else if (method.equals("rating"){
-        //     return searchByRating;
-        // }
-        return "temp";
+        // store search results into new ArrayList
+        ArrayList<Book> bookResults = new ArrayList<Book>();
+
+        // each method will loop through all books and look for matches
+        if(method.equalsIgnoreCase("title")){
+            for(Book currBook : allBooks){
+                if(currBook.getTitle().equalsIgnoreCase(search))
+                    bookResults.add(currBook);
+            }
+        }
+
+        else if(method.equalsIgnoreCase("author")){
+            for(Book currBook : allBooks){
+                if(currBook.getAuthor().equalsIgnoreCase(search))
+                    bookResults.add(currBook);
+            }
+        }
+
+        else if(method.equalsIgnoreCase("rating")){
+            try {
+                // ratings are stored in hashmap, so grab that to do comparison
+                int rating = Integer.parseInt(search);
+                HashMap<Book, Rating> bookRatings = ratings.getRatings();
+    
+                for(Book currBook: allBooks){
+                    Rating currRating = bookRatings.get(currBook);
+                    if(currRating != null && currRating.getRating() == rating){
+                        bookResults.add(currBook);
+                    }
+                }
+                
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid rating, please enter a number.");
+            }
+        }
+        return arrayToString(bookResults, method);
     }
 
     /**
