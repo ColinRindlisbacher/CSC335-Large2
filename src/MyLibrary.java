@@ -7,6 +7,7 @@
  */
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class MyLibrary {
 
@@ -89,20 +90,29 @@ public class MyLibrary {
 					title = s.nextLine();
 					System.out.println("Enter author for book you want to rate:");
 					author = s.nextLine();
-					int rating = 0;
+					String  rating = "";
 					boolean isValidRate = false;
+					ArrayList<String> range = new ArrayList<String>();
+					range.add("1");
+					range.add("2");
+					range.add("3");
+					range.add("4");
+					range.add("5");
 			
 					// loop to get valid rating(1-5)
 					while(!isValidRate){
 						System.out.println("Please enter rating for book(1-5):");
-						rating = s.nextInt();
+						rating = s.nextLine();
+						if(range.contains(rating)){
+							isValidRate = true;
+						}
 
-						isValidRate = rating >= 1 && rating <= 5;
 						if(!isValidRate){
 							System.out.println("Invalid input. Please enter an integer 1-5");
 						}
 					}
-					lib.rate(title, author, rating);
+					int r = Integer.parseInt(rating);
+					lib.rate(title, author, r);
 					break;
 
 				// getBooks selected
