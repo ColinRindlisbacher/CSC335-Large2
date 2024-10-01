@@ -56,7 +56,7 @@ public class MyLibrary {
 					String search = "";
 					search = s.nextLine();	
 					System.out.println("Searching for book by "+ method + "...");
-					lib.search(method, search);
+					System.out.println(lib.search(method, search));
 					break;
 
 				// add book selected
@@ -150,7 +150,7 @@ public class MyLibrary {
 			}
 		}
 		s.close();
-		System.out.println("Thank you for vising CroRind Library, have a good day!");
+		System.out.println("Thank you for visiting CroRind Library, have a good day!");
 	}
 
 }
