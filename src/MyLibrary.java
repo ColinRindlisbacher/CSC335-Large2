@@ -54,6 +54,7 @@ public class MyLibrary {
 					}
 
 					String search = "";
+					System.out.println("Please enter the " + method + " you would like to search");
 					search = s.nextLine();	
 					System.out.println("Searching for book by "+ method + "...");
 					System.out.println(lib.search(method, search));
