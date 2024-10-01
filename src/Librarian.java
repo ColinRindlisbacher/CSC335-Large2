@@ -15,9 +15,9 @@ import java.util.Scanner;
 
 public class Librarian {
     
-    RatedBooks ratings;
-    ReadBooks readStatus;
-    ArrayList<Book> allBooks;
+    private RatedBooks ratings;
+    private ReadBooks readStatus;
+    private ArrayList<Book> allBooks;
 
     public Librarian() {
         this.ratings = new RatedBooks();
