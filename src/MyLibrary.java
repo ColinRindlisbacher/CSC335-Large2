@@ -12,7 +12,6 @@ public class MyLibrary {
 
 	public static void main(String[] args) {
 		LibraryController libCon = new LibraryController();
-		Librarian lib = new Librarian();
 		Scanner s = new Scanner(System.in);
 		String input = "";
 
