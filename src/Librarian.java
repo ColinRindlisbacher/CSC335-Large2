@@ -96,7 +96,7 @@ public class Librarian {
 
     private Book findBook(String title, String author) {
         for (Book currBook : allBooks) {
-            if(title == currBook.getTitle() && author == currBook.getAuthor()) {
+            if(title.equals(currBook.getTitle()) && author.equals(currBook.getAuthor())) {
                 return currBook;
             }
         }
@@ -136,20 +136,19 @@ public class Librarian {
 
         } else if (method.equals("read")) {
 
-            Collections.sort(allBooks, new TitleComparator());
             for (Book currBook : allBooks) {
                 if (readStatus.isRead(currBook)) booksToPrint.add(currBook);
             }
+            Collections.sort(booksToPrint, new TitleComparator());
 
         } else if (method.equals("unread")) {
 
-            Collections.sort(allBooks, new TitleComparator());
             for (Book currBook : allBooks) {
                 if (!readStatus.isRead(currBook)) booksToPrint.add(currBook);
             }
+            Collections.sort(booksToPrint, new TitleComparator());
 
         } 
-
         return arrayToString(booksToPrint, method);
     }
 
