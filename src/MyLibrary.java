@@ -111,7 +111,7 @@ public class MyLibrary {
 					method = "";
 					
 					while(!isValidMethod){
-						System.out.println("Please select what method you would like to sort the books(title,author,rating,unread)");
+						System.out.println("Please select what method you would like to sort the books(title,author,read,unread)");
 						method = s.nextLine();
 						isValidMethod = method.equalsIgnoreCase("title")  ||
 										method.equalsIgnoreCase("author") ||
