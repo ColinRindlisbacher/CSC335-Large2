@@ -1,5 +1,11 @@
-import java.io.File;
-import java.io.FileNotFoundException;
+/*
+ * Authors: AJ Cronin and Colin Rindlisbacher
+ * File: MyLibrary.java
+ * Purpose: Serves as the view/UI for our Library.
+ * Gets and validates user inputs and calls the 
+ * related methods.
+ */
+
 import java.util.Scanner;
 
 public class MyLibrary {
@@ -108,12 +114,12 @@ public class MyLibrary {
 						method = s.nextLine();
 						isValidMethod = method.equalsIgnoreCase("title")  ||
 										method.equalsIgnoreCase("author") ||
-										method.equalsIgnoreCase("rating") ||
+										method.equalsIgnoreCase("read") ||
 										method.equalsIgnoreCase("unread");
 
 						// print error message if bad input
 						if(!isValidMethod){
-							System.out.println("Invalid input. Please enter 'title', 'author', 'rating', or 'unread'.");
+							System.out.println("Invalid input. Please enter 'title', 'author', 'read', or 'unread'.");
 						}
 					}
 					lib.getBooks(method);
