@@ -122,7 +122,7 @@ public class MyLibrary {
 							System.out.println("Invalid input. Please enter 'title', 'author', 'read', or 'unread'.");
 						}
 					}
-					lib.getBooks(method);
+					System.out.println(lib.getBooks(method));
 					break;
 
 				// suggestRead selected
