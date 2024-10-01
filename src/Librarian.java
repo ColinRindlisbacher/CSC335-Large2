@@ -22,6 +22,7 @@ public class Librarian {
     public Librarian() {
         this.ratings = new RatedBooks();
         this.readStatus = new ReadBooks();
+        allBooks = new ArrayList<Book>();
     }
 
      /**
