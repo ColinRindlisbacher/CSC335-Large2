@@ -1,7 +1,7 @@
 /*
  * Authors: AJ Cronin and Colin Rindlisbacher
  * File: Librarian.java
- * Purpose: Serves as the central controller to the Library Program
+ * Purpose: Serves as the central model to the Library Program
  * that performs actions as specified by the MyLibrary class such as
  * rating books, retrieving all books, and searching for books.
  */
