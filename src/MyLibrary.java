@@ -77,6 +77,7 @@ public class MyLibrary {
 					}
 					break;
 			}
+			System.out.println("");
 		}
 		s.close();
 		libCon.closeScanner();
