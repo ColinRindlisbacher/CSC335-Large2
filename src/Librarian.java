@@ -6,8 +6,11 @@
  * rating books, retrieving all books, and searching for books.
  */
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 public class Librarian {
     
@@ -160,7 +163,28 @@ public class Librarian {
         
     }
 
+    /**
+     * @param fileName = name of txt file to be read in
+     */
     public void addBooks(String fileName) {
-
+        try {
+			File file = new File(fileName);
+			Scanner fiScanner = new Scanner(file);
+						
+			while(fiScanner.hasNextLine()){
+				String line = fiScanner.nextLine();
+				String[] bookInfo = line.split(";");
+				// make sure line is valid length of 2
+				if(bookInfo.length == 2){
+					String newTitle = bookInfo[0].trim();
+					String newAuthor = bookInfo[1].trim();
+					Book fileBook = new Book(newTitle, newAuthor);
+					addBook(fileBook);
+			    }
+			}
+			fiScanner.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found: " + fileName);
+		}
     }
 }

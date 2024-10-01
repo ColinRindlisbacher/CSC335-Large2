@@ -131,25 +131,7 @@ public class MyLibrary {
 					System.out.println("Please enter file name:");
 					String fileName = s.nextLine();
 
-				    try {
-						File file = new File(fileName);
-						Scanner fiScanner = new Scanner(file);
-						
-						while(fiScanner.hasNextLine()){
-							String line = fiScanner.nextLine();
-							String[] bookInfo = line.split(";");
-							// make sure line is valid length of 2
-							if(bookInfo.length == 2){
-								String newTitle = bookInfo[0].trim();
-								String newAuthor = bookInfo[1].trim();
-								Book fileBook = new Book(newTitle, newAuthor);
-								lib.addBook(fileBook);
-							}
-						}
-						fiScanner.close();
-					} catch (FileNotFoundException e) {
-						System.out.println("File not found: " + fileName);
-					}
+					lib.addBooks(fileName);
 					break;
 
 				// if no other valid option is selected
