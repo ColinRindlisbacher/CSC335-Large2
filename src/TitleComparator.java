@@ -1,8 +1,11 @@
 /*
  * Authors: AJ Cronin and Colin Rindlisbacher
+ * Usernames: ajcronin  | ckrindlisbacher
  * File: TitleComparator.java
  * Purpose: Serves as the comparator for the book class to compare
  * by Title which can be helpful when sorting by Title.
+ * Encaspulation: Encaspulation is maintained by only returning a primitive type
+ * meaning no escaping reference.
  */
 
 import java.util.Comparator;

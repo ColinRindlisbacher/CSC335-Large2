@@ -1,9 +1,14 @@
 /*
  * Authors: AJ Cronin and Colin Rindlisbacher
+ * Usernames: ajcronin  | ckrindlisbacher
  * File: LibraryController.java
  * Purpose: Serves as the controller to the Library Program
  * that is the middle ground between the view (the user) and the
  * model that performs all the actions.
+ * Encaspulation: Encaspulation is maintained by having a private instance
+ * variable and not having a getter for it because the model doesn't need to
+ * be returned ever. It also only returns primitive or immutable types, meaning
+ * our data cannot be corrupted from outside code.
  */
 
 public class LibraryController {

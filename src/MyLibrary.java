@@ -1,9 +1,13 @@
 /*
  * Authors: AJ Cronin and Colin Rindlisbacher
+ * Usernames: ajcronin  | ckrindlisbacher
  * File: MyLibrary.java
  * Purpose: Serves as the view/UI for our Library.
  * Gets and validates user inputs and calls the 
  * related methods.
+ * Encaspulation: Encaspulation is maintained by having all methods other
+ * than main be set to private so that if this was used elsewhere, none of
+ * our methods could be called and therefore have no access to the controller/model.
  */
 
  import java.util.Scanner;
@@ -126,8 +130,11 @@
 
 	private static void suggestReadPrompt(Scanner s, LibraryController libCon) {
 		Book suggestion = libCon.suggestRead();
-		System.out.println("Here is a book suggestion that you haven't read:");
-		System.out.println(suggestion.toString());
+		if (suggestion == null) {
+			System.out.println("You've read all your books!");
+		} else {
+			System.out.println("Here is a book suggestion that you haven't read:\n" + suggestion.toString());
+		}
 	}
 
 	private static void addBooksPrompt(Scanner s, LibraryController libCon) {

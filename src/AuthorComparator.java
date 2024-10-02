@@ -1,8 +1,11 @@
 /*
  * Authors: AJ Cronin and Colin Rindlisbacher
+ * Usernames: ajcronin  | ckrindlisbacher
  * File: AuthorComparator.java
  * Purpose: Serves as the comparator for the book class to compare
  * by Author which can be helpful when sorting by Author.
+ * Encaspulation: Encaspulation is maintained by only returning a primitive type
+ * meaning no escaping reference.
  */
 
 import java.util.Comparator;

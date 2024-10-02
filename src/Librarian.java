@@ -1,9 +1,14 @@
 /*
  * Authors: AJ Cronin and Colin Rindlisbacher
+ * Usernames: ajcronin  | ckrindlisbacher
  * File: Librarian.java
  * Purpose: Serves as the central model to the Library Program
  * that performs actions as specified by the MyLibrary class such as
  * rating books, retrieving all books, and searching for books.
+ * Encaspulation: Encaspulation is maintained by having private instance variables
+ * that do not have getters because the direct information from them isn't needed.
+ * Also, all methods either return primitive types or immutable types (including our
+ * book class) preventing any corruption of important data.
  */
 
 import java.io.File;
@@ -177,16 +182,18 @@ public class Librarian {
      */
     public Book suggestRead() {
         ArrayList<Book> suggestions = new ArrayList<Book>(allBooks);
+        // Make a copy and shuffle the copy and pick the first book.
         Collections.shuffle(suggestions);
         int i = 0;
         Book currBook = suggestions.get(i);
 
+        // Loop until the current book hasn't been read or you've been through all your books.
         while(readStatus.isRead(currBook) && i < suggestions.size()) {
-            i++;
             currBook = suggestions.get(i);
+            i++;
         }
         if (i == suggestions.size()) {
-            System.out.println("You've read all your books.");
+            return null;
         }
         return currBook;
         
