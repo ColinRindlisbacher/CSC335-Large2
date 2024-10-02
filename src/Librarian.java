@@ -130,12 +130,12 @@ public class Librarian {
         // Store all books in a new array as to not mess with the order of the original array.
         ArrayList<Book> booksToPrint = new ArrayList<Book>();
         if (method.equals("title")) {
-
+            // Sort using Title Comparator if we want list by title.
             booksToPrint = new ArrayList<Book>(allBooks);
             Collections.sort(booksToPrint, new TitleComparator());
 
         } else if (method.equals("author")){
-
+            // Sort using Author Comparator if we want list by title.
             booksToPrint = new ArrayList<Book>(allBooks);
             Collections.sort(booksToPrint, new AuthorComparator());
 
@@ -144,6 +144,7 @@ public class Librarian {
             for (Book currBook : allBooks) {
                 if (readStatus.isRead(currBook)) booksToPrint.add(currBook);
             }
+            // Sort using Title Comparator as default sorting.
             Collections.sort(booksToPrint, new TitleComparator());
 
         } else if (method.equals("unread")) {
@@ -151,6 +152,7 @@ public class Librarian {
             for (Book currBook : allBooks) {
                 if (!readStatus.isRead(currBook)) booksToPrint.add(currBook);
             }
+            // Sort using Title Comparator as default sorting.
             Collections.sort(booksToPrint, new TitleComparator());
 
         } 
