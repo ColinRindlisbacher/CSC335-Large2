@@ -10,7 +10,7 @@
  * our methods could be called and therefore have no access to the controller/model.
  */
 
- import java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.Scanner;
 
  public class MyLibrary {
