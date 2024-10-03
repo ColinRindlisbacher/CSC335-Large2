@@ -10,7 +10,8 @@
  * our methods could be called and therefore have no access to the controller/model.
  */
 
- import java.util.Scanner;
+ import java.util.ArrayList;
+import java.util.Scanner;
 
  public class MyLibrary {
  
@@ -88,24 +89,34 @@
 	 }
 
 	private static void ratePrompt(Scanner s, LibraryController libCon) {
-		System.out.println("Enter title for book you want to rate:");
+        System.out.println("Enter title for book you want to rate:");
 		String title = s.nextLine();
 		System.out.println("Enter author for book you want to rate:");
 		String author = s.nextLine();
-		int rating = 0;
+		String  rating = "";
 		boolean isValidRate = false;
+		// ArrayList to check against if string is 1-5
+		ArrayList<String> range = new ArrayList<String>();
+		range.add("1");
+		range.add("2");
+		range.add("3");
+		range.add("4");
+		range.add("5");
 
+			
 		// loop to get valid rating(1-5)
 		while(!isValidRate){
 			System.out.println("Please enter rating for book(1-5):");
-			rating = s.nextInt();
-
-			isValidRate = rating >= 1 && rating <= 5;
+			rating = s.nextLine();
+			if(range.contains(rating)){
+				isValidRate = true;
+            }
 			if(!isValidRate){
 				System.out.println("Invalid input. Please enter an integer 1-5");
 			}
 		}
-		libCon.rate(title, author, rating);
+		int r = Integer.parseInt(rating);
+		libCon.rate(title, author, r);
 	}
 
 	private static void getBooksPrompt(Scanner s, LibraryController libCon) {
