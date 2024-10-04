@@ -62,10 +62,13 @@ books.
 HashMap- HashMaps are used to keep a mapping of Books to a Rating or to a flag of read or unread.
 
 ---------------------------------------------
-Design Patters:
+Design Patterns:
 MVC- We use Model View Controller design pattern. We have MyLibrary as the view that is the UI that the user
 sees and interacts with, LibraryController as the Controller which calls the Model, which manipulates the data
 and updates the view.
+
+Strategy- We used the Strategy pattern by defining a family of classes, in this case the AuthorComparator and 
+TitleComparator, and made them interchangeable when comparing or sorting Books. 
 
 AntiPatterns avoided:
 Primitive Obsession- Using the Ratings as a separate class rather than just an integer is our way of avoiding 
